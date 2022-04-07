@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement2 : MonoBehaviour
 {
     public float Speed;
     public float JumpPower;
@@ -19,18 +19,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 movement = new Vector2(0,RB.velocity.y);
+        Vector2 movement = new Vector2(0, RB.velocity.y);
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.J))
         {
             movement.x = -Speed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.L))
         {
             movement.x = Speed * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             RB.AddForce(new Vector2(0, JumpPower));
         }
