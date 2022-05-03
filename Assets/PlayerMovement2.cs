@@ -9,6 +9,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     private Rigidbody2D RB;
 
+    private bool _isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,11 @@ public class PlayerMovement2 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        //vektor dannes og gives værdierne...
         Vector2 movement = new Vector2(0, RB.velocity.y);
 
+        //Input til spiller nummer 2
         if (Input.GetKey(KeyCode.J))
         {
             movement.x = -Speed * Time.deltaTime;
@@ -30,11 +34,19 @@ public class PlayerMovement2 : MonoBehaviour
             movement.x = Speed * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        // hop kun hvis tasten og spilleren står på jorden
+        if (Input.GetKeyDown(KeyCode.I) && _isGrounded == true)
         {
             RB.AddForce(new Vector2(0, JumpPower));
+            _isGrounded = false;
         }
 
         RB.velocity = movement;
+    }
+
+    //tjeker om spilleren står på jorden
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _isGrounded = true;
     }
 }
