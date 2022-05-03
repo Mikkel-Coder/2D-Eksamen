@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isGrounded;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
 
     }
 
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
             RB.AddForce(new Vector2(0, JumpPower));
             _isGrounded = false;
+            source.Play();
         }
 
         RB.velocity = movement;
