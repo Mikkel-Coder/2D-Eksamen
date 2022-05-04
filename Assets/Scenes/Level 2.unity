@@ -8151,7 +8151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a852b556d3b024391b9e3e1ddb70f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: 3
+  NextLevel: 4
   TimeUntilNextLevel: 3
 --- !u!61 &1637509287
 BoxCollider2D:

@@ -23,7 +23,7 @@ public class ToLevels : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
     IEnumerator WaitdAndChangel()

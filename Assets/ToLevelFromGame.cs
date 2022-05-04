@@ -11,7 +11,7 @@ public class ToLevelFromGame : MonoBehaviour
         //Til levelselector
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
