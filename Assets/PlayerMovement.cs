@@ -66,8 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         //opdatere movemnt til at passe overens
         RB.velocity = movement;
-
-
+        
     }
     // tjekker om spilleren står på jorden
     private void OnCollisionEnter2D(Collision2D collision)
