@@ -6,6 +6,8 @@ public class PlayerMovement2 : MonoBehaviour
 {
     public float Speed;
     public float JumpPower;
+    public Animator PlayerAnimatior;
+    public SpriteRenderer SR;
 
     private Rigidbody2D RB;
 
@@ -18,7 +20,6 @@ public class PlayerMovement2 : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
@@ -45,6 +46,26 @@ public class PlayerMovement2 : MonoBehaviour
             source.Play();
         }
 
+        //Når spilleren bevæger sig
+        if (movement.x != 0)
+        {
+            PlayerAnimatior.SetBool("IsMoving", true);
+        }
+        else
+        {
+            PlayerAnimatior.SetBool("IsMoving", false);
+        }
+
+        if (movement.x > 0)
+        {
+            SR.flipX = false;
+        }
+        else
+        {
+            SR.flipX = true;
+        }
+
+        //opdatere movemnt til at passe overens
         RB.velocity = movement;
     }
 

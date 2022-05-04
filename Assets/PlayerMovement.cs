@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float Speed;
     public float JumpPower;
+    public Animator PlayerAnimatior;
+    public SpriteRenderer SR;
 
     private Rigidbody2D RB;
 
@@ -18,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
@@ -37,11 +38,30 @@ public class PlayerMovement : MonoBehaviour
             movement.x = Speed * Time.deltaTime;
         }
         // hop kun hvis tasten og spilleren står på jorden
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.W) && _isGrounded == true)
         {
             RB.AddForce(new Vector2(0, JumpPower));
             _isGrounded = false;
             source.Play();
+        }
+        
+        //Når spilleren bevæger sig
+        if (movement.x != 0)
+        {
+            PlayerAnimatior.SetBool("IsMoving", true);
+        }
+        else
+        {
+            PlayerAnimatior.SetBool("IsMoving", false);
+        }
+        
+        if (movement.x > 0)
+        {
+            SR.flipX = false;
+        }
+        else
+        {
+            SR.flipX = true;
         }
 
         //opdatere movemnt til at passe overens
