@@ -3172,7 +3172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb0e36a0670f224dafb62730a6faaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2000
+  Speed: 1000
   JumpPower: 110000
   PlayerAnimatior: {fileID: 483886472}
   SR: {fileID: 483886468}
@@ -3660,7 +3660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38322103c975dac45820d6bccda325e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraSpeed: 0.041
+  CameraSpeed: 0.15
 --- !u!4 &541897423
 Transform:
   m_ObjectHideFlags: 0
@@ -9649,8 +9649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5908e316254e21c458f22cf74234e097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3000
-  JumpPower: 120000
+  Speed: 1000
+  JumpPower: 110000
   PlayerAnimatior: {fileID: 1860379280}
   SR: {fileID: 1860379277}
 --- !u!50 &1860379275
