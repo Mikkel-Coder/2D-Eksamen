@@ -44,7 +44,10 @@ public class PlayerMovement : MonoBehaviour
             source.Play();
         }
 
+        //opdatere movemnt til at passe overens
         RB.velocity = movement;
+
+
     }
     // tjekker om spilleren står på jorden
     private void OnCollisionEnter2D(Collision2D collision)
